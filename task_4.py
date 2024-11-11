@@ -14,3 +14,11 @@ print('Задача 4. Текстовый редактор')
 # Какую букву ищем? л
 # Количество цифр 0: 2
 # Количество букв л: 1
+
+def count_letters(text, num, sym):
+    print(f"Количество цифр {num}: {text.count(num)}\nКоличество букв {sym}: {text.count(sym)}")
+
+text = input("Введите текст: ")
+number = input("Какую цифру ищем? ")
+symbol = input("Какую букву ищем? ")
+count_letters(text, number, symbol)
