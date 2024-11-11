@@ -12,17 +12,45 @@ print('Задача 5. Недоделка')
 # программа запрашивает у пользователя число до тех пор, пока он не угадает загаданное.
 
 # Используя этот шаблон проекта, реализуйте игры «Камень, ножницы, бумага» и «Угадай число».
+from random import randint
 
 def rock_paper_scissors():
-  # Здесь будет игра «Камень, ножницы, бумага»
+  # Здесь будет игра «Камень, ножницы, бумага» 
+    random_rps = randint(1,3) #1 - камень, 2 - ножницы, 3 - бумага
+    gamer_choise = input("Сделайте выбор, камень ножницы или бумага: ").upper()
+    if (gamer_choise == "КАМЕНЬ" and random_rps == 2) or (gamer_choise == "НОЖНИЦЫ" and random_rps == 3) or (gamer_choise == "БУМАГА" and random_rps == 1):
+        print("Вы выиграли!")
+    elif (gamer_choise == "КАМЕНЬ" and random_rps == 3) or (gamer_choise == "НОЖНИЦЫ" and random_rps == 1) or (gamer_choise == "БУМАГА" and random_rps == 2):
+        print("Вы проиграли!")
+    else:
+        print("Ничья! Попробуйте еще раз!")
+        rock_paper_scissors()
 
 
 def guess_the_number():
   # Здесь будет игра «Угадай число»
+    random_int = randint(1,100)
+    number = 0
+    while number != random_int:
+        number = int(input("Угадай число, от 1 до 100: "))
+        if number > random_int:
+            print("Нет, искомое число меньше.")
+        elif number < random_int:
+            print("Нет! Искомое число больше.")
+        else:
+            print("Победа! Я загадывал число", random_int)
 
 
 def main_menu():
   # Здесь главное меню игры
+    choise = int(input("Выберите игру по номеру:\n1 - ""Камень, ножницы, бумага""\n2 - ""Угадай число "))
+    if choise == 1:
+        rock_paper_scissors()
+    elif choise == 2:
+        guess_the_number()
+    else:
+        print("Неверный ввод, попробуйте еще раз! ")
+        main_menu()
 
 
 main_menu()
