@@ -33,3 +33,36 @@ print('Задача 3. Апгрейд калькулятора')
 # 2 - максимальная цифра
 # 3 - минимальная цифра: 3
 # Минимальная цифра: 1
+
+
+def sum_number(number):
+    result = 0
+    for num in number:
+        result += int(num)
+    print(f'Сумма цифр: {result}')
+
+def max_num(number):
+    result = 0
+    for num in number:
+        if int(num) > result:
+            result = int(num)
+    print(f'Максимальная цифра: {result}')
+
+def min_num(number):
+    result = 9
+    for num in number:
+        if int(num) < result:
+            result = int(num)
+    print(f'Минимальная цифра: {result}')
+
+while True:
+    number = input("Введите число: ")
+    func = int(input("Введите номер действия:\n1 - сумма цифр:\n2 - максимальная цифра:\n3 - минимальная цифра: "))
+    if func == 1:
+        sum_number(number)
+    elif func == 2:
+        max_num(number)
+    elif func == 3:
+        min_num(number)
+    else:
+        print("Неправильный номер действия, давайте все заново")
