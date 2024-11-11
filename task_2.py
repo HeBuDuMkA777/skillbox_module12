@@ -15,3 +15,17 @@ print('Задача 2. Функция в функции')
 # Пример 2
 # Введите число: -4
 # Отрицательное
+
+def positive():
+    print("Положительное")
+
+def negative():
+    print("Отрицательное")
+
+def test(num):
+    if num > 0:
+        return positive()
+    elif num < 0:
+        return negative()
+    
+test(int(input("Введите целое число:\n")))
